@@ -1,5 +1,6 @@
 # PlutoTVforEmby
-Python script edited for Emby's XMLTV data.
+Source script: https://github.com/juliomm64/PlutoIPTV-for-TVH
+Edited for Emby's XMLTV data.
 
 Requires some additional libraries to be installed first:
 pip install datetime, tzlocal, pytz, furl, wget
