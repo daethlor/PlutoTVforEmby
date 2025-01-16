@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.7
 # -*- coding: UTF-8 -*-
-""" A Script for setting up full EmbyLiveTV support for Pluto.tv"""
+""" A Script for setting up full TVHeadend support for Pluto.tv"""
 
 import json
 import os
@@ -115,8 +115,8 @@ if not epgdir:
     epgdir = localdir
 if not logdir:
     logdir = localdir
-if not picondir.endswith("/"):
-    picondir = picondir + "/"
+#if not picondir.endswith("/"):
+#    picondir = picondir + "/"
 
 if debugmode:
     debugdir = os.path.dirname(os.path.realpath(__file__)) + "/plutotv_debug"
@@ -844,9 +844,9 @@ def main():
                     # epicon = episodes['episode']['number']
                     offset = datetime.now(pytz.timezone("America/Toronto")).strftime('%z')
                     starttime = datetime.fromisoformat(epstart[:-1])
-                    localstart = starttime.strftime("%Y%m%d%H%M%S")+" "+offset
+                    localstart = starttime.strftime("%Y%m%d%H%M%S")+" 0000"
                     stoptime = datetime.fromisoformat(epstop[:-1])
-                    localstop = stoptime.strftime("%Y%m%d%H%M%S")+" "+offset
+                    localstop = stoptime.strftime("%Y%m%d%H%M%S")+" 0000"
                     # idslug = channel['slug'] + ".plutotv"
                     if channel['category'] == "Latino":
                         eplang = "es"
